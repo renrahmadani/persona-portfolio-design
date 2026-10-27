@@ -1,0 +1,169 @@
+/* Projects grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(330px, 100%), 1fr));
+  gap: clamp(18px, 2.6vw, 34px) clamp(18px, 3vw, 34px);
+  padding-top: 14px;
+}
+#repo-grid {
+  padding-bottom: 6vh;
+}
+.card {
+  color: var(--ink);
+  position: relative;
+  padding: clamp(16px, 1.8vw, 20px) clamp(18px, 2vw, 22px)
+    clamp(14px, 1.6vw, 18px);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  transform: rotate(var(--tilt)) translateY(24px);
+  opacity: 0;
+  transition:
+    transform 0.18s cubic-bezier(0.7, 0, 0.3, 1),
+    filter 0.18s;
+  filter: drop-shadow(7px 7px 0 rgba(0, 0, 0, 0.5));
+  will-change: transform;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--white);
+  clip-path: polygon(0 6%, 3% 0, 100% 0, 100% 88%, 97% 100%, 0 100%);
+}
+.card > * {
+  position: relative;
+}
+.screen.active .card {
+  animation: cardIn 0.5s cubic-bezier(0.2, 1.1, 0.3, 1) forwards;
+  animation-delay: var(--d);
+}
+@keyframes cardIn {
+  to {
+    transform: rotate(var(--tilt)) translateY(0);
+    opacity: 1;
+  }
+}
+.card:hover {
+  transform: rotate(0deg) scale(1.03) !important;
+  filter: drop-shadow(10px 10px 0 var(--black));
+  z-index: 3;
+}
+.card .lang {
+  position: absolute;
+  top: -12px;
+  right: 14px;
+  background: var(--black);
+  color: var(--white);
+  font-weight: 700;
+  font-size: clamp(11px, 0.8vw, 13px);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  transform: rotate(2deg);
+}
+.card .lang::before {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--lc, var(--red));
+  margin-right: 7px;
+}
+.card h3 {
+  font-family: "Archivo Black", "Arial Black", Impact, sans-serif;
+  font-size: clamp(18px, 1.6vw, 21px);
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+.card h3 em {
+  font-style: normal;
+  color: var(--red);
+}
+.card p {
+  font-size: clamp(14px, 1.2vw, 15.5px);
+  line-height: 1.4;
+  min-height: 44px;
+  color: #2c2c2c;
+}
+.card .meta {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: clamp(11px, 0.9vw, 13px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.card .meta .go {
+  background: var(--red);
+  color: var(--white);
+  padding: 4px 12px;
+  transform: skewX(-10deg);
+  transition: background 0.15s;
+}
+.card:hover .meta .go {
+  background: var(--black);
+}
+
+/* Featured */
+.card.feat {
+  color: var(--white);
+  filter: drop-shadow(7px 7px 0 var(--red-deep));
+}
+.card.feat::before {
+  background: var(--black);
+}
+.card.feat:hover {
+  filter: drop-shadow(10px 10px 0 var(--red));
+}
+.card.feat p {
+  color: #d8d5cf;
+}
+.card.feat h3 {
+  color: var(--white);
+}
+.card.feat .lang {
+  background: var(--red);
+}
+.card.feat .meta .go {
+  background: var(--white);
+  color: var(--black);
+}
+.card.feat:hover .meta .go {
+  background: var(--red);
+  color: var(--white);
+}
+#feat-grid,
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(330px, 100%), 1fr));
+  gap: clamp(18px, 2.6vw, 34px) clamp(18px, 3vw, 34px);
+  padding-top: 14px;
+}
+#repo-grid {
+  padding-top: 14px;
+}
+.grid-label {
+  font-family: "Archivo Black", "Arial Black", Impact, sans-serif;
+  font-size: clamp(14px, 1.5vw, 20px);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: clamp(2.6vh, 3.6vh, 4vh) 0 clamp(1.6vh, 2vh, 2.4vh);
+  text-shadow: 2px 2px 0 var(--black);
+}
+.grid-label .bar {
+  display: inline-block;
+  width: 34px;
+  height: 12px;
+  background: var(--white);
+  transform: skewX(-24deg);
+  margin-right: 12px;
+  vertical-align: baseline;
+}

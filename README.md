@@ -1,53 +1,60 @@
 # Persona-Style Portfolio — Rendi Rahmadani
 
-A Persona 5 menu-inspired portfolio, structured as Model–View–Controller.
+A Persona 5 menu-inspired portfolio with modular architecture, interactive animated cursors, and stylish visual effects.
 
 ## Structure
 
 ```
-├── index.html            View skeleton — markup only, no logic or styles
+├── index.html            View skeleton & HUD structure
 ├── css/
-│   └── style.css         All styling (theme colors in :root at the top)
+│   ├── style.css         Main stylesheet entry
+│   └── modules/          Modular stylesheets
+│       ├── base.css      Variables, reset, typography base
+│       ├── bg.css        Persona stripes, halftone, spinning stars
+│       ├── shell.css     HUD tags, control keys legend, clock
+│       ├── screens.css   Screen layouts and interactive menus
+│       ├── typography.css Ransom-note cutout lettering & jitter
+│       ├── projects.css  Angular project cards & badges
+│       ├── skills.css    Skewed skill meter bars
+│       ├── about_contact.css Polaroid photo, paper notes, form
+│       └── effects.css   Screen wipe transitions & animated cursor
 ├── js/
-│   ├── model.js          DATA — projects, skills, GitHub fetch, app state
-│   ├── view.js           DOM — rendering, ransom lettering, wipe, cursor, sound
-│   └── controller.js     EVENTS — keyboard/mouse input, navigation logic
+│   ├── app.js            Application entry point (ES Modules)
+│   └── modules/
+│       ├── model.js      Data: featured works, graphic designs, skills
+│       ├── cursor.js     Persona 5 interactive animated 30-frame cursor
+│       ├── audio.js      Sound effects (SFX) & unlock handling
+│       ├── visuals.js    Ransom typography, low-overhead parallax, clock
+│       ├── transitions.js Persona 5 slash screen wipe
+│       ├── screens.js    Card, screen, and skill DOM rendering
+│       ├── contact.js    Form submit relay & mailto fallback
+│       └── router.js     Routing, keyboard controls, popstate
 └── assets/
-    ├── sfx/select.mp3    Menu sound (plays on select/confirm)
-    ├── cursors/          Animated cursor sprite strips (30 frames each)
-    ├── menus/            per-screen backgrounds: home.jpg, skills.jpg, about.jpg,
-    │                     contact.jpg (included) — add projects.jpg to complete the set
-    ├── cv/               your downloadable CV (linked from About + Contact)
-    ├── hero.png          ← optional: extra art layered on the home screen
-    ├── me.jpg            ← add: your photo for the About polaroid
-    └── projects/         ← add: card thumbnails
-        ├── bsl.png, medcnn.png, gesture.png, rapidcheck.png   (featured)
-        └── <RepoName>.png  (auto-matched to GitHub repos by exact name)
+    ├── icon/             Web favicon & touch icon (icon.png)
+    ├── sfx/select.mp3    Menu sound effect (select / confirm)
+    ├── cursors/          Animated cursor sprite strips (normal.png, link.png)
+    ├── menus/            Screen backgrounds (home, skills, about, contact)
+    ├── menus-mobile/     Optimized WebP backgrounds for mobile devices
+    ├── me.jpg            About section photo
+    └── projects/         Custom project thumbnails
 ```
-
-Missing images hide themselves — no broken icons.
 
 ## Editing content
 
-Everything you'd normally want to change lives in **js/model.js**:
-featured projects, skill bars, thumbnail overrides, your GitHub username.
-Bio and contact links are plain HTML in **index.html**.
-Colors are CSS variables at the top of **css/style.css**.
+- Edit portfolio data, skills, and projects in **js/modules/model.js**.
+- Update bio and links in **index.html**.
+- Persona colors and CSS variables are configured in **css/modules/base.css**.
 
 ## Run locally
 
-```
-python3 -m http.server
+```bash
+python -m http.server 8000
+# or
+npx serve .
 ```
 
-then open http://localhost:8000 — opening index.html directly (file://)
-blocks the audio fetch and GitHub API in most browsers.
+Open http://localhost:8000 in your browser.
 
 ## Deploy
 
-Push the whole folder to a GitHub repo, enable Pages
-(Settings → Pages → Deploy from branch → main → / root). Done.
-
-## Controls
-
-↑ / ↓ select · Enter confirm · Esc back · click the name to go home
+Push to GitHub and enable GitHub Pages (**Settings** → **Pages** → Deploy from branch `main` → `/` root).

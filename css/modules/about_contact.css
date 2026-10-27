@@ -1,0 +1,189 @@
+/* About/Contact */
+.paper {
+  max-width: min(760px, 92vw);
+  background: var(--white);
+  color: var(--ink);
+  padding: clamp(22px, 3vw, 34px) clamp(24px, 3.2vw, 38px);
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.55;
+  clip-path: polygon(0 4%, 2% 0, 100% 0, 100% 94%, 98% 100%, 0 100%);
+  transform: rotate(-0.6deg);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.55);
+  margin-bottom: clamp(2.8vh, 4vh, 4.6vh);
+}
+.paper strong {
+  color: var(--red);
+}
+.paper .stamp {
+  display: inline-block;
+  background: var(--black);
+  color: var(--white);
+  padding: 2px 8px;
+  transform: rotate(-2deg);
+  font-weight: 700;
+}
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(14px, 1.8vw, 20px);
+  padding-bottom: clamp(4vh, 6vh, 7vh);
+}
+.contact-chip {
+  background: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  font-family: "Archivo Black", "Arial Black", Impact, sans-serif;
+  font-size: clamp(15px, 1.8vw, 22px);
+  text-transform: uppercase;
+  padding: clamp(10px, 1.4vw, 14px) clamp(18px, 2.4vw, 26px);
+  transform: skewX(-8deg) rotate(-1deg);
+  transition:
+    transform 0.15s,
+    background 0.15s,
+    color 0.15s;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.4);
+}
+.contact-chip span {
+  display: inline-block;
+  transform: skewX(8deg);
+}
+.contact-chip:hover {
+  background: var(--white);
+  color: var(--red);
+  transform: skewX(-8deg) rotate(0) scale(1.06);
+}
+
+/* Form */
+#contact-form {
+  width: 100%;
+}
+.form-head {
+  font-family: "Archivo Black", "Arial Black", Impact, sans-serif;
+  font-size: clamp(16px, 2vw, 24px);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  position: relative;
+  display: inline-block;
+}
+.form-head::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 7px;
+  width: 100%;
+  background: var(--red);
+  transform: skewX(-24deg);
+}
+.field {
+  display: block;
+  margin-bottom: 14px;
+}
+.field span {
+  display: block;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: clamp(11px, 0.8vw, 12px);
+  margin-bottom: 5px;
+}
+.field input,
+.field textarea {
+  width: 100%;
+  border: 3px solid var(--black);
+  background: #fff;
+  color: var(--ink);
+  padding: clamp(8px, 1vw, 10px) clamp(10px, 1.2vw, 12px);
+  font-family: inherit;
+  font-size: clamp(15px, 1.2vw, 16px);
+  transform: skewX(-2deg);
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--red);
+  box-shadow: 4px 4px 0 var(--red);
+}
+.field textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+.form-foot {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+.form-send {
+  border: 0;
+  cursor: pointer;
+  margin-bottom: 0;
+  font-size: clamp(15px, 1.6vw, 17px);
+  padding: clamp(10px, 1.2vw, 12px) clamp(18px, 2.2vw, 26px);
+}
+.form-send:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+#form-status {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: clamp(11px, 0.9vw, 13px);
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.paper a {
+  color: var(--red);
+  font-weight: 700;
+}
+.paper a:hover {
+  background: var(--red);
+  color: var(--white);
+  text-decoration: none;
+}
+.paper .quote em {
+  display: inline;
+  background: var(--black);
+  color: var(--white);
+  font-style: italic;
+  padding: 1px 6px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.7;
+}
+.cv-btn {
+  display: inline-block;
+  margin-bottom: clamp(4vh, 6vh, 7vh);
+  text-decoration: none;
+  background: var(--red);
+  color: var(--white);
+  font-family: "Archivo Black", "Arial Black", Impact, sans-serif;
+  font-size: clamp(15px, 2vw, 24px);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: clamp(12px, 1.6vw, 16px) clamp(22px, 2.8vw, 30px);
+  transform: skewX(-8deg) rotate(-1deg);
+  box-shadow: 7px 7px 0 var(--black);
+  transition:
+    transform 0.15s,
+    background 0.15s,
+    color 0.15s,
+    box-shadow 0.15s;
+}
+.cv-btn span {
+  display: inline-block;
+  transform: skewX(8deg);
+}
+.cv-btn:hover {
+  background: var(--white);
+  color: var(--red);
+  transform: skewX(-8deg) rotate(0) scale(1.05);
+  box-shadow: 10px 10px 0 var(--black);
+}
+.cv-btn:active {
+  transform: skewX(-8deg) scale(0.97);
+}

@@ -1,0 +1,62 @@
+/* Skills */
+.skill-group {
+  margin-bottom: clamp(3.6vh, 5vh, 6vh);
+  max-width: 920px;
+}
+.skill-group h3 {
+  display: inline-block;
+  background: var(--white);
+  color: var(--black);
+  font-family: "Archivo Black", "Arial Black", Impact, sans-serif;
+  font-size: clamp(16px, 2vw, 26px);
+  text-transform: uppercase;
+  padding: clamp(4px, 0.8vh, 6px) clamp(12px, 1.6vw, 16px);
+  transform: rotate(-1.5deg);
+  margin-bottom: clamp(1.8vh, 2.4vh, 2.8vh);
+  box-shadow: 5px 5px 0 var(--black);
+}
+.skill-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.8vw, 18px);
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.skill-row .name {
+  width: clamp(160px, 22vw, 220px);
+  flex-shrink: 0;
+  font-size: clamp(14px, 1.2vw, 17px);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 var(--black);
+}
+.skill-bar {
+  flex: 1 1 200px;
+  height: clamp(16px, 1.6vw, 20px);
+  background: rgba(0, 0, 0, 0.55);
+  position: relative;
+  transform: skewX(-18deg);
+  overflow: hidden;
+  max-width: 520px;
+  min-width: 160px;
+}
+.skill-bar .fill {
+  position: absolute;
+  inset: 0;
+  width: 0;
+  background: var(--white);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0 26px,
+    rgba(230, 0, 18, 0.22) 26px 30px
+  );
+  transition: width 0.9s cubic-bezier(0.2, 1, 0.3, 1);
+}
+.skill-row .lv {
+  font-family: "Archivo Black", "Arial Black", Impact, sans-serif;
+  font-size: clamp(13px, 1vw, 15px);
+  width: 70px;
+  text-align: right;
+  text-shadow: 2px 2px 0 var(--black);
+}

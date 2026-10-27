@@ -1,0 +1,72 @@
+/* Background layers */
+#bg {
+  position: fixed;
+  inset: -6vmax;
+  z-index: 0;
+  pointer-events: none;
+  contain: layout paint style;
+}
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+#bg-stripes {
+  background: repeating-linear-gradient(
+    115deg,
+    var(--red) 0 46px,
+    var(--red-deep) 46px 52px,
+    var(--red) 52px 120px,
+    #c4000f 120px 126px
+  );
+  animation: stripeDrift 22s linear infinite;
+}
+@keyframes stripeDrift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 520px 0;
+  }
+}
+#bg-halftone {
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.35) 1.6px,
+    transparent 1.7px
+  );
+  background-size: 14px 14px;
+  mix-blend-mode: multiply;
+  animation: halftoneDrift 30s linear infinite;
+}
+@keyframes halftoneDrift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -140px 140px;
+  }
+}
+#bg-vignette {
+  background: radial-gradient(
+    ellipse at 32% 40%,
+    transparent 30%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+}
+.bg-star {
+  position: absolute;
+  opacity: 0.16;
+  animation: spin 60s linear infinite;
+  transform-origin: center;
+}
+.bg-star.s2 {
+  animation-duration: 90s;
+  animation-direction: reverse;
+  opacity: 0.1;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

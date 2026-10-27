@@ -1,0 +1,47 @@
+/* Base & Reset */
+:root {
+  --red: #e60012;
+  --red-deep: #a3000c;
+  --black: #0b0b0d;
+  --white: #f6f4ef;
+  --ink: #111;
+  font-size: clamp(14px, 0.9vw + 0.2vh, 16px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100dvh;
+  height: 100vh;
+}
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  user-select: none;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.display {
+  font-family: "Archivo Black", "Arial Black", Impact, sans-serif;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+button {
+  font-family: inherit;
+}
+a {
+  color: inherit;
+}

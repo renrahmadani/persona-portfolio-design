@@ -1,21 +1,19 @@
 /* =====================================================================
-   MODEL — the data and state of the app. Never touches the DOM.
-   Edit your content here: featured works, graphic design projects.
+   MODEL MODULE — Persona 5 Portfolio
+   Data, app state, and content configuration.
    ===================================================================== */
 
-const Model = {
-  // Where the contact form delivers (via formsubmit.co relay)
+export const Model = {
   contactEmail: "ren.rahmadani@gmail.com",
 
-  // App state (read/written by the Controller, displayed by the View)
   state: {
     screen: "home",
     menuIndex: 0,
     projectsLoaded: false,
     skillsBuilt: false,
+    transitioning: false,
   },
 
-  // ---- Featured works (hand-written) ----
   featured: [
     {
       title: "Brand Identity — UMKM Coffee House",
@@ -59,7 +57,6 @@ const Model = {
     },
   ],
 
-  // ---- Graphic Design Projects (static portfolio) ----
   graphicProjects: [
     {
       name: "brand-identity-startup",
@@ -67,7 +64,8 @@ const Model = {
       tag: "BRANDING",
       url: "#",
       img: "assets/projects/logo-brand-1.png",
-      description: "Pembuatan logo minimalis, brand guideline, serta penerapan visual identity untuk startup teknologi.",
+      description:
+        "Pembuatan logo minimalis, brand guideline, serta penerapan visual identity untuk startup teknologi.",
     },
     {
       name: "social-feed-fashion",
@@ -75,7 +73,8 @@ const Model = {
       tag: "SOCIAL MEDIA",
       url: "#",
       img: "assets/projects/feed-ig-2.png",
-      description: "Desain feed instagram dengan komposisi bersih, tipografi kekinian, dan fokus pada produk fashion.",
+      description:
+        "Desain feed instagram dengan komposisi bersih, tipografi kekinian, dan fokus pada produk fashion.",
     },
     {
       name: "promo-banner-sale",
@@ -83,7 +82,8 @@ const Model = {
       tag: "PRINT",
       url: "#",
       img: "assets/projects/banner-2.png",
-      description: "Banner promosi penjualan untuk web & digital display dengan penekanan call-to-action yang kuat.",
+      description:
+        "Banner promosi penjualan untuk web & digital display dengan penekanan call-to-action yang kuat.",
     },
     {
       name: "poster-event",
@@ -91,7 +91,8 @@ const Model = {
       tag: "PRINT",
       url: "#",
       img: "assets/projects/poster-9x16.png",
-      description: "Desain poster vertikal untuk promosi event, konser, atau kegiatan komunitas siap cetak & share.",
+      description:
+        "Desain poster vertikal untuk promosi event, konser, atau kegiatan komunitas siap cetak & share.",
     },
     {
       name: "id-card-lanyard",
@@ -99,7 +100,8 @@ const Model = {
       tag: "PRINT",
       url: "#",
       img: "assets/projects/idcard-lanyard.png",
-      description: "Desain kartu identitas, lanyard, dan aksesoris identitas perusahaan dengan layout fungsional & profesional.",
+      description:
+        "Desain kartu identitas, lanyard, dan aksesoris identitas perusahaan dengan layout fungsional & profesional.",
     },
     {
       name: "jersey-sport",
@@ -107,7 +109,8 @@ const Model = {
       tag: "MERCHANDISE",
       url: "#",
       img: "assets/projects/jersey-design-2.png",
-      description: "Desain jersey tim olahraga custom, meliputi nomor punggung, nama, sponsor, dan warna tim.",
+      description:
+        "Desain jersey tim olahraga custom, meliputi nomor punggung, nama, sponsor, dan warna tim.",
     },
     {
       name: "carousel-content",
@@ -115,7 +118,8 @@ const Model = {
       tag: "SOCIAL MEDIA",
       url: "#",
       img: "assets/projects/carousel-ig.png",
-      description: "Desain carousel edukatif/marketing untuk meningkatkan reach dan storytelling brand di Instagram.",
+      description:
+        "Desain carousel edukatif/marketing untuk meningkatkan reach dan storytelling brand di Instagram.",
     },
     {
       name: "marketing-kit-brand",
@@ -123,10 +127,32 @@ const Model = {
       tag: "PRINT",
       url: "#",
       img: "assets/projects/marketing-kit.png",
-      description: "Paket desain promosi lengkap (banner, poster, pamflet) dengan visual konsisten untuk kebutuhan kampanye.",
+      description:
+        "Paket desain promosi lengkap (banner, poster, pamflet) dengan visual konsisten untuk kebutuhan kampanye.",
     },
   ],
 
-  // Optional thumbnail overrides
-  projectImages: {},
+  skills: [
+    {
+      group: "DESAIN GRAFIS & KREATIF",
+      items: [
+        ["CANVA (Desain Cepat & Konten Kreatif)", 95],
+        ["ADOBE PHOTOSHOP (Manipulasi & Retouching)", 80],
+        ["SOCIAL MEDIA DESIGN (Feeds, Carousel, Story)", 90],
+        ["BRANDING & IDENTITY (Logo & Visual Brand)", 85],
+        ["MARKETING KIT (Banner, Poster, Pamflet)", 90],
+      ],
+    },
+    {
+      group: "PENDUKUNG & TEKNOLOGI",
+      items: [
+        ["UI/UX DESIGN BASICS (Wireframing & Layout)", 80],
+        ["CONTENT CREATION & COPYWRITING", 85],
+        ["HTML & CSS DASAR (Pengetahuan Web)", 75],
+        ["MANAJEMEN PROYEK & DIGITAL TOOLS", 85],
+      ],
+    },
+  ],
 };
+
+export default Model;
