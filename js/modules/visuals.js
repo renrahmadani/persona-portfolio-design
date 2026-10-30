@@ -88,6 +88,12 @@ export const Visuals = {
   },
 
   initParallax() {
+    // Only enable mouse parallax on desktop / fine pointer devices to save mobile battery
+    const isDesktop =
+      window.matchMedia &&
+      (window.matchMedia("(pointer: fine)").matches || window.innerWidth > 768);
+    if (!isDesktop) return;
+
     const stripes = document.getElementById("bg-stripes");
     const halftone = document.getElementById("bg-halftone");
 

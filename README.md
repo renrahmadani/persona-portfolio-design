@@ -35,7 +35,8 @@ c:\Users\Rene\Documents\SEO\
 │       ├── projects.css        # Grid kartu portofolio & styling badge
 │       ├── skills.css          # Meteran progress bar keahlian bergaya Persona
 │       ├── about_contact.css   # Layout polaroid foto, paper notes, form kontak
-│       └── effects.css         # Transisi wipe & styling kursor kustom
+│       ├── effects.css         # Transisi wipe & styling kursor kustom
+│       └── mobile.css          # Optimasi layout, touch hitbox & breakpoint mobile
 │
 ├── js/
 │   ├── app.js                  # Entry point aplikasi (ES Modules bootstrap)
@@ -52,10 +53,10 @@ c:\Users\Rene\Documents\SEO\
 └── assets/
     ├── icon/                   # Favicon & icon web (icon.png 512x512)
     ├── cursors/                # Sprite strip kursor (normal.png, link.png)
-    ├── menus/                  # Background resolusi penuh (home, skills, about, contact)
+    ├── menus/                  # Background resolusi penuh WebP (home, skills, about, contact)
     ├── menus-mobile/           # Background WebP teroptimasi untuk perangkat mobile
     ├── sfx/                    # Efek suara navigasi (select.mp3)
-    └── me.jpg                  # Foto profil polaroid pada halaman About
+    └── me.webp                 # Foto profil polaroid WebP (dengan fallback me.jpg)
 ```
 
 ---
@@ -72,14 +73,6 @@ c:\Users\Rene\Documents\SEO\
 
 ---
 
-## Panduan Modifikasi Konten
-
-1. **Portofolio & Keahlian:** Buka [`js/modules/model.js`](file:///c:/Users/Rene/Documents/SEO/js/modules/model.js) untuk mengubah daftar proyek unggulan (`featured`), proyek desain grafis (`graphicProjects`), dan tingkat keahlian (`skills`).
-2. **Biodata & Tautan Sosial:** Buka [`index.html`](file:///c:/Users/Rene/Documents/SEO/index.html) pada bagian section `#screen-about` dan `#screen-contact`.
-3. **Email Penerima Pesan:** Ubah `contactEmail` di [`js/modules/model.js`](file:///c:/Users/Rene/Documents/SEO/js/modules/model.js).
-4. **Palet Warna Tema:** Atur variabel CSS `:root` di [`css/modules/base.css`](file:///c:/Users/Rene/Documents/SEO/css/modules/base.css) (`--red`, `--black`, `--white`, `--red-deep`).
-
----
 
 ## Menjalankan Secara Lokal
 
