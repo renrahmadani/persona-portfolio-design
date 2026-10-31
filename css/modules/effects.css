@@ -132,7 +132,8 @@ body.page:not(.page-home) #hero-art {
 #wipe .pane {
   position: absolute;
   inset: 0;
-  transform: translateX(-130%) skewX(-14deg);
+  transform: translate3d(-130%, 0, 0) skewX(-14deg);
+  will-change: transform;
 }
 #wipe .p1 {
   background: var(--red);
@@ -154,16 +155,16 @@ body.page:not(.page-home) #hero-art {
 }
 @keyframes wipeAcross {
   0% {
-    transform: translateX(-130%) skewX(-14deg);
+    transform: translate3d(-130%, 0, 0) skewX(-14deg);
   }
   45% {
-    transform: translateX(0%) skewX(-14deg);
+    transform: translate3d(0%, 0, 0) skewX(-14deg);
   }
   55% {
-    transform: translateX(0%) skewX(-14deg);
+    transform: translate3d(0%, 0, 0) skewX(-14deg);
   }
   100% {
-    transform: translateX(130%) skewX(-14deg);
+    transform: translate3d(130%, 0, 0) skewX(-14deg);
   }
 }
 #wipe .flash {
@@ -245,11 +246,19 @@ body.cursor-active * {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  display: block;
   opacity: 0;
-  will-change: transform;
+  will-change: opacity, transform;
   pointer-events: none;
-  transition: opacity 0.55s ease;
+  transition: opacity 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
+}
+.menu-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 body.page-home #art-home,
 body.page-projects #art-projects,

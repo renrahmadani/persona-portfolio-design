@@ -27,15 +27,19 @@ export const Transitions = {
     void el.offsetWidth;
     el.classList.add("go");
 
+    const isMobile = window.innerWidth <= 768;
+    const swapDelay = isMobile ? 260 : 340;
+    const doneDelay = isMobile ? 540 : 720;
+
     // Mid-wipe: screen is fully covered by red/black/white panes
     setTimeout(() => {
       if (typeof swapCallback === "function") swapCallback();
-    }, 340);
+    }, swapDelay);
 
     // End of wipe: screen fully unveiled
     setTimeout(() => {
       if (typeof doneCallback === "function") doneCallback();
-    }, 720);
+    }, doneDelay);
   },
 };
 

@@ -21,11 +21,26 @@
       <div class="bg-layer" id="bg-stripes"></div>
       <svg class="bg-star" style="left: 6%; top: 8%; width: 26vmax; height: 26vmax" viewBox="0 0 100 100"><polygon points="50,0 60,35 98,35 68,57 78,94 50,72 22,94 32,57 2,35 40,35" fill="#000"/></svg>
       <svg class="bg-star s2" style="right: 4%; bottom: 6%; width: 34vmax; height: 34vmax" viewBox="0 0 100 100"><polygon points="50,0 60,35 98,35 68,57 78,94 50,72 22,94 32,57 2,35 40,35" fill="#fff"/></svg>
-      <img class="menu-art" id="art-home" src="assets/menus/home.webp" srcset="assets/menus-mobile/home-mobile.webp 768w, assets/menus/home.webp 1920w" sizes="(max-width: 768px) 100vw, 100vw" alt="" onload="document.body.classList.add('has-art-home')" onerror="this.remove()" />
-      <img class="menu-art" id="art-projects" src="assets/menus/projects.webp" alt="" onload="document.body.classList.add('has-art-projects')" onerror="this.remove()" />
-      <img class="menu-art" id="art-skills" src="assets/menus/skills.webp" srcset="assets/menus-mobile/skills-mobile.webp 768w, assets/menus/skills.webp 1920w" sizes="(max-width: 768px) 100vw, 100vw" alt="" onload="document.body.classList.add('has-art-skills')" onerror="this.remove()" />
-      <img class="menu-art" id="art-about" src="assets/menus/about.webp" srcset="assets/menus-mobile/about-mobile.webp 768w, assets/menus/about.webp 1920w" sizes="(max-width: 768px) 100vw, 100vw" alt="" onload="document.body.classList.add('has-art-about')" onerror="this.remove()" />
-      <img class="menu-art" id="art-contact" src="assets/menus/contact.webp" srcset="assets/menus-mobile/contact-mobile.webp 768w, assets/menus/contact.webp 1920w" sizes="(max-width: 768px) 100vw, 100vw" alt="" onload="document.body.classList.add('has-art-contact')" onerror="this.remove()" />
+      <picture class="menu-art" id="art-home">
+        <source media="(max-width: 768px)" srcset="assets/menus-mobile/home-mobile.webp" />
+        <img src="assets/menus/home.webp" alt="" onload="document.body.classList.add('has-art-home')" onerror="this.closest('.menu-art').remove()" />
+      </picture>
+      <picture class="menu-art" id="art-projects">
+        <source media="(max-width: 768px)" srcset="assets/menus-mobile/projects-mobile.webp" />
+        <img src="assets/menus/projects.webp" alt="" onload="document.body.classList.add('has-art-projects')" onerror="this.closest('.menu-art').remove()" />
+      </picture>
+      <picture class="menu-art" id="art-skills">
+        <source media="(max-width: 768px)" srcset="assets/menus-mobile/skills-mobile.webp" />
+        <img src="assets/menus/skills.webp" alt="" onload="document.body.classList.add('has-art-skills')" onerror="this.closest('.menu-art').remove()" />
+      </picture>
+      <picture class="menu-art" id="art-about">
+        <source media="(max-width: 768px)" srcset="assets/menus-mobile/about-mobile.webp" />
+        <img src="assets/menus/about.webp" alt="" onload="document.body.classList.add('has-art-about')" onerror="this.closest('.menu-art').remove()" />
+      </picture>
+      <picture class="menu-art" id="art-contact">
+        <source media="(max-width: 768px)" srcset="assets/menus-mobile/contact-mobile.webp" />
+        <img src="assets/menus/contact.webp" alt="" onload="document.body.classList.add('has-art-contact')" onerror="this.closest('.menu-art').remove()" />
+      </picture>
       <div class="bg-layer" id="bg-halftone"></div>
       <div class="bg-layer" id="bg-vignette"></div>
     </div>

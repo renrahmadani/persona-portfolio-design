@@ -36,6 +36,18 @@ export const Cursor = {
     this.el = document.getElementById("cursor");
     if (!this.el) return;
 
+    // Completely disable custom cursor on mobile / touch screens to prevent RAF loop and lag
+    const isMobile =
+      window.innerWidth <= 768 ||
+      (window.matchMedia &&
+        window.matchMedia("(pointer: coarse)").matches &&
+        !window.matchMedia("(pointer: fine)").matches);
+
+    if (isMobile) {
+      if (this.el) this.el.style.display = "none";
+      return;
+    }
+
     // Detect mouse/trackpad pointer (including Windows touchscreen laptops in Edge)
     const hasFinePointer =
       window.matchMedia &&
